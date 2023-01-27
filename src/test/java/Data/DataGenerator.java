@@ -1,6 +1,7 @@
 package Data;
 
 import com.github.javafaker.Faker;
+import lombok.Data;
 import lombok.Value;
 
 import java.time.LocalDate;
@@ -14,7 +15,9 @@ public class DataGenerator {
     }
 
     public static String generateDate(int shift) {
-        return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        LocalDate possibleDate = LocalDate.now().plusDays(shift);
+        String date = possibleDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        return date;
     }
 
     public static String generateCity() {
@@ -31,16 +34,17 @@ public class DataGenerator {
 
     public static String generateName(String locale) {
         var faker = new Faker(new Locale(locale));
-        return faker.name().lastName() + " " + faker.name().firstName();
+        String name = faker.name().fullName();
+        return name;
     }
 
     public static String generatePhone(String locale) {
         var faker = new Faker(new Locale(locale));
-        return faker.phoneNumber().phoneNumber();
+        String phone = faker.phoneNumber().phoneNumber();
+        return phone;
     }
 
     public static class Registration {
-
         private Registration() {
         }
 
