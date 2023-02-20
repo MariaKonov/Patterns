@@ -13,12 +13,10 @@ public class DataGenerator {
     }
 
     public static String generateDate(int shift) {
-        LocalDate possibleDate = LocalDate.now().plusDays(shift);
-        String date = possibleDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        return date;
+        return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
-    public static String generateCity() {
+    public static String generateCity(String locale) {
         var cities = new String[]{"Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Махачкала", "Магас", "Нальчик", "Элиста", "Черкесск", "Петрозаводск",
                 "Сыктывкар", "Симферополь", "Йошкар-Ола", "Саранск", "Якутск", "Владикавказ", "Казань", "Кызыл", "Ижевск", "Абакан", "Грозный",
                 "Чебоксары", "Барнаул", "Чита", "Петропавловск-Камчатский", "Краснодар", "Красноярск", "Пермь", "Владивосток", "Ставрополь", "Хабаровск",
@@ -32,14 +30,12 @@ public class DataGenerator {
 
     public static String generateName(String locale) {
         var faker = new Faker(new Locale(locale));
-        String name = faker.name().fullName();
-        return name;
+        return faker.name().lastName() + " " + faker.name().firstName();
     }
 
     public static String generatePhone(String locale) {
         var faker = new Faker(new Locale(locale));
-        String phone = faker.phoneNumber().phoneNumber();
-        return phone;
+        return faker.phoneNumber().phoneNumber();
     }
 
     public static class Registration {
