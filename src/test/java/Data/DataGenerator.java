@@ -28,7 +28,6 @@ public class DataGenerator {
         return cities[new Random().nextInt(cities.length)];
     }
 
-
     public static String generateName(String locale) {
         var faker = new Faker(new Locale(locale));
         return faker.name().lastName() + " " + faker.name().firstName();
