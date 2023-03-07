@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static data.DataGenerator.generateDate;
 
 public class CardDeliveryTest {
 
@@ -26,9 +27,9 @@ public class CardDeliveryTest {
         DataGenerator DataGenerator;
         DataGenerator.UserInfo validUser = data.DataGenerator.Registration.generateUser("ru");
         int daysToAddForFirstMeeting = 4;
-        String firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
+        String firstMeetingDate = generateDate(daysToAddForFirstMeeting);
         int daysToAddForSecondMeeting = 7;
-        String secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
+        String secondMeetingDate = generateDate(daysToAddForSecondMeeting);
         $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(firstMeetingDate);
