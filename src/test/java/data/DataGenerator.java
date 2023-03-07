@@ -1,4 +1,4 @@
-package Data;
+package data;
 
 import com.github.javafaker.Faker;
 import lombok.Value;
@@ -45,13 +45,6 @@ public class DataGenerator {
         public static UserInfo generateUser(String locale) {
             return new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
         }
-    }
-
-    @Value
-    public static class UserInfo {
-        String city;
-        String name;
-        String phone;
     }
 
     @Value

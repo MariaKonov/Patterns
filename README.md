@@ -1,1 +1,1 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/pnhocpqrjfrusbw6?svg=true)](https://ci.appveyor.com/project/MariaKonov/changing-the-card-delivery-date)
+[![Build status](https://ci.appveyor.com/api/projects/status/ogetn0lgt51f95ua?svg=true)](https://ci.appveyor.com/project/MariaKonov/patterns)

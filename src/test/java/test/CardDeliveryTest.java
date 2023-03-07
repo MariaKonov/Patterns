@@ -1,6 +1,6 @@
-package Test;
+package test;
 
-import Data.DataGenerator;
+import data.DataGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,6 +23,7 @@ public class CardDeliveryTest {
     @Test
     @DisplayName("Should successful plan meeting")
     void shouldSuccessfulPlanMeeting() {
+        DataGenerator DataGenerator;
         DataGenerator.UserInfo validUser = DataGenerator.Registration.generateUser("ru");
         int daysToAddForFirstMeeting = 4;
         String firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
@@ -47,6 +48,6 @@ public class CardDeliveryTest {
                 .shouldBe(visible);
         $("[data-test-id='success-notification'] .notification__content")
                 .shouldHave(exactText("Встреча успешно запланирована на " + secondMeetingDate))
-                .shouldBe(visible); houldBe(visible);
+                .shouldBe(visible);
     }
 }
